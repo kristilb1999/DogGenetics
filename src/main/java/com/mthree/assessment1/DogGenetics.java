@@ -7,21 +7,36 @@ public class DogGenetics {
 
     public static void backgroundReport() {
 
-        String[] dogBreeds = {"Golden Lab", "St. Bernard", "King Doberman", "German Shepherd", "Siberian Husky"};
-
         Random rand = new Random();
 
-        int percentLeftToFind = 100;
-        int breedChoice = 0;
-        int percentBreed;
+        int breed0 = 0;
+        int breed1 = 0;
+        int breed2 = 0;
+        int breed3 = 0;
+        int breed4 = 0;
 
-        for(int i = 0; percentLeftToFind > 0 && i < dogBreeds.length - 1; i++) {
-            percentBreed = rand.nextInt(percentLeftToFind) + 1;
-            System.out.println(percentBreed + "% " + dogBreeds[i]);
-            percentLeftToFind -= percentBreed;
+        int percentBreed = 0;
+
+        //randomly generate percentages for the breed until you find a combination that
+        //equals exactly 100
+        while(percentBreed != 100) {
+
+            breed0 = rand.nextInt(100);
+            breed1 = rand.nextInt(100);
+            breed2 = rand.nextInt(100);
+            breed3 = rand.nextInt(100);
+            breed4 = rand.nextInt(100);
+
+            percentBreed = breed0 + breed1 + breed2 + breed3 + breed4;
+
         }
 
-        System.out.println(percentLeftToFind + "% " + dogBreeds[dogBreeds.length - 1]);
+        //the breeds are not random, but could be random if added to an array and chosen randomly
+        System.out.println(breed0 + "% Golden Lab");
+        System.out.println(breed1 + "% Doberman");
+        System.out.println(breed2 + "% Chihuahua");
+        System.out.println(breed3 + "% German Shepherd");
+        System.out.println(breed4 + "% St. Bernard");
 
 
     }
